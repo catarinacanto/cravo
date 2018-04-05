@@ -1,4 +1,4 @@
-package org.academiadecodigo.hackathon.cravo.model;
+package org.academiadecodigo.hackathon.cravo.model.user;
 
 
 import javax.persistence.*;
