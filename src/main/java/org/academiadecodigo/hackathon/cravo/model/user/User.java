@@ -1,6 +1,7 @@
 package org.academiadecodigo.hackathon.cravo.model.user;
 
 
+import org.academiadecodigo.hackathon.cravo.model.AbstractModel;
 import org.academiadecodigo.hackathon.cravo.model.item.Item;
 import org.academiadecodigo.hackathon.cravo.model.transactions.Demand;
 import org.academiadecodigo.hackathon.cravo.model.transactions.Offer;
@@ -13,7 +14,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "user")
-public class User {
+public class User extends AbstractModel{
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)

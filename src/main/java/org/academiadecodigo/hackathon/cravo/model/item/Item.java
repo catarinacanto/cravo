@@ -1,5 +1,6 @@
 package org.academiadecodigo.hackathon.cravo.model.item;
 
+import org.academiadecodigo.hackathon.cravo.model.AbstractModel;
 import org.academiadecodigo.hackathon.cravo.model.transactions.Demand;
 import org.academiadecodigo.hackathon.cravo.model.transactions.Offer;
 import org.hibernate.annotations.Fetch;
@@ -11,7 +12,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "item")
-public class Item {
+public class Item extends AbstractModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

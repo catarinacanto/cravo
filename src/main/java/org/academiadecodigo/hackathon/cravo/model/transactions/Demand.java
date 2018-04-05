@@ -1,5 +1,6 @@
 package org.academiadecodigo.hackathon.cravo.model.transactions;
 
+import org.academiadecodigo.hackathon.cravo.model.AbstractModel;
 import org.academiadecodigo.hackathon.cravo.model.item.Item;
 import org.academiadecodigo.hackathon.cravo.model.user.User;
 
@@ -8,7 +9,7 @@ import java.sql.Date;
 
 @Entity
 @Table(name = "demand")
-public class Demand {
+public class Demand extends AbstractModel{
 
     public Demand() {
     }
