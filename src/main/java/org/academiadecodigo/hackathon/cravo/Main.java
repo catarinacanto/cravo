@@ -21,11 +21,6 @@ public class Main extends Application {
     public static void main(String[] args) {
 
         launch(args);
-
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("cravo");
-
-        EntityManager em = emf.createEntityManager();
-
     }
 
     @Override
