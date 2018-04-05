@@ -23,4 +23,5 @@ public interface UserService {
 	 * @return the number of users
 	 */
 	int count();
+
 }

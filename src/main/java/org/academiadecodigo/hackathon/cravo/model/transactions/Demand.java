@@ -10,6 +10,9 @@ import java.sql.Date;
 @Table(name = "demand")
 public class Demand {
 
+    public Demand() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
