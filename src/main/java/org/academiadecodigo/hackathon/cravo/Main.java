@@ -19,15 +19,13 @@ public class Main extends Application{
     public static void main(String[] args) {
 
         launch(args);
-
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("cravo");
-
-        EntityManager em = emf.createEntityManager();
-
     }
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("cravo");
+        EntityManager em = emf.createEntityManager();
+
         Parent root = FXMLLoader.load(getClass().getResource("fxml_example.fxml"));
 
         GridPane gridPane = new GridPane();
