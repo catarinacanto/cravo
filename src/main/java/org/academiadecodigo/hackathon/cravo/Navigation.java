@@ -1,4 +1,4 @@
-package org.academiadecodigo.hackathon.cravo.javafx;
+package org.academiadecodigo.hackathon.cravo;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

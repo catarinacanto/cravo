@@ -1,4 +1,4 @@
-package org.academiadecodigo.hackathon.cravo.javafx;
+package org.academiadecodigo.hackathon.cravo.views;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -9,8 +9,9 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import org.academiadecodigo.hackathon.cravo.Navigation;
 
-public class Login extends Application {
+public class LoginView extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
