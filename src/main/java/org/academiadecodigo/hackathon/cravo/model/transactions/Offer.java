@@ -24,7 +24,7 @@ public class Offer extends AbstractModel {
     @ManyToOne
     private Item item_id;
 
-    private Integer ammount;
+    private Integer amount;
 
     private Date date;
 
@@ -53,12 +53,12 @@ public class Offer extends AbstractModel {
         this.item_id = item_id;
     }
 
-    public Integer getAmmount() {
-        return ammount;
+    public Integer getAmount() {
+        return amount;
     }
 
-    public void setAmmount(Integer ammount) {
-        this.ammount = ammount;
+    public void setAmount(Integer amount) {
+        this.amount = amount;
     }
 
     public Date getDate() {
