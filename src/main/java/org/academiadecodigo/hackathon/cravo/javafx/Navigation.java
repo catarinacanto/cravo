@@ -16,10 +16,6 @@ public class Navigation {
     private LinkedList<Scene> history = new LinkedList<Scene>();
 
 
-    public static Navigation getInstance() {
-
-    }
-
     public void load(String view) {
 
         try {
@@ -42,5 +38,14 @@ public class Navigation {
 
     public void setStage(Stage stage) {
         this.stage = stage;
+    }
+
+    public static Navigation getInstance() {
+
+        if (instance == null) {
+            instance = new Navigation();
+        }
+        return instance;
+
     }
 }

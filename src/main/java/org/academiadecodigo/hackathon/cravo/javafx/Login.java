@@ -6,6 +6,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
@@ -20,6 +21,9 @@ public class Login extends Application {
         gridPane.setAlignment(Pos.CENTER);
 
         gridPane.setGridLinesVisible(false);
+
+        Image image = new Image(getClass().getResourceAsStream(""));
+
 
         Scene scene = new Scene(gridPane, 500, 500);
 
