@@ -26,6 +26,9 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("cravo");
+        EntityManager em = emf.createEntityManager();
+        
         Navigation navigation = Navigation.getInstance();
         navigation.setStage(primaryStage);
         navigation.load("mainMenu");
