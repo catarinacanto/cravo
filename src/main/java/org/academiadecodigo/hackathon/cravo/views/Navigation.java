@@ -1,4 +1,4 @@
-package org.academiadecodigo.hackathon.cravo;
+package org.academiadecodigo.hackathon.cravo.views;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,11 +10,24 @@ import java.util.LinkedList;
 
 public class Navigation {
 
-    private static final String VIEW_PATH = "/org/academiadecodigo/hackathon/cravo/javafx";
+    private static final String VIEW_PATH = "/views/";
     private static Navigation instance;
     private Stage stage;
-    private LinkedList<Scene> history = new LinkedList<Scene>();
 
+    private LinkedList<Scene> history;
+
+    private Navigation() {
+        history = new LinkedList<>();
+    }
+
+    public static Navigation getInstance() {
+
+        if (instance == null) {
+            instance = new Navigation();
+        }
+
+        return instance;
+    }
 
     public void load(String view) {
 
@@ -23,7 +36,7 @@ public class Navigation {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(VIEW_PATH + view + ".fxml"));
             Parent root = fxmlLoader.load();
 
-            Scene scene = new Scene(root, 1000, 640);
+            Scene scene = new Scene(root, 1024, 768);
 
             stage.setScene(scene);
             stage.show();
@@ -36,16 +49,21 @@ public class Navigation {
         }
     }
 
+    public void back() {
+
+        if (history.size() <= 1) {
+            return;
+        }
+
+        history.pop();
+
+        stage.setScene(history.peek());
+        stage.show();
+    }
+
+
     public void setStage(Stage stage) {
         this.stage = stage;
     }
 
-    public static Navigation getInstance() {
-
-        if (instance == null) {
-            instance = new Navigation();
-        }
-        return instance;
-
-    }
 }
