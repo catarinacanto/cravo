@@ -1,11 +1,12 @@
 package org.academiadecodigo.hackathon.cravo.controllers;
 
-import org.academiadecodigo.hackathon.cravo.services.UserService;
+
+import org.academiadecodigo.hackathon.cravo.services.UserServiceImpl;
 
 public class LoginController {
 
 	private boolean onLogin;
-	private UserService userService;
+	private UserServiceImpl userService;
 
 	public void initialize(){
 	}
