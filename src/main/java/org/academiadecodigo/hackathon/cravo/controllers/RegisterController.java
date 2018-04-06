@@ -8,6 +8,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+import org.academiadecodigo.hackathon.cravo.model.user.User;
 import org.academiadecodigo.hackathon.cravo.services.UserRegisterServiceImpl;
 import org.academiadecodigo.hackathon.cravo.views.Navigation;
 import org.academiadecodigo.hackathon.cravo.services.ServiceRegistry;
@@ -60,11 +61,14 @@ public class RegisterController implements Controller {
         UserRegisterServiceImpl userRegisterService =
                 (UserRegisterServiceImpl) ServiceRegistry.getInstance().getService("userRegistryService");
 
-        System.out.println(userRegisterService.userExists(username));
+        if(!userRegisterService.userExists(username)){
 
+            User user = new User(userField.getText(), passField.getText(), emailField.getText());
 
+            userRegisterService.registerUser(user);
 
-        text.setText("Register Successful!! Click here to Login");
+            text.setText("Register Successful!! Click here to Login");
+        }
 
         Navigation.getInstance().load("login");
     }
