@@ -50,9 +50,6 @@ public class Main extends Application {
         ItemServiceImpl itemService = new ItemServiceImpl(emf);
         DemandServiceImpl demandService = new DemandServiceImpl(emf);
         OfferServiceImpl offerService = new OfferServiceImpl(emf);
-		
-        SendEmail sendEmail = new SendEmail(userService);
-        sendEmail.offer(1);
         
         List<User> userList = userService.list();
         List<Item> itemList = itemService.list();
