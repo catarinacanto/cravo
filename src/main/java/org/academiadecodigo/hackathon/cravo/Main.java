@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.stage.Stage;
+import org.academiadecodigo.hackathon.cravo.interwebs.SendEmail;
 import org.academiadecodigo.hackathon.cravo.model.item.Item;
 import org.academiadecodigo.hackathon.cravo.model.transactions.Demand;
 import org.academiadecodigo.hackathon.cravo.model.transactions.Offer;
@@ -44,11 +45,15 @@ public class Main extends Application {
 
         // TODO: Delete these sample queries:
 
+		
         UserServiceImpl userService = new UserServiceImpl(emf);
         ItemServiceImpl itemService = new ItemServiceImpl(emf);
         DemandServiceImpl demandService = new DemandServiceImpl(emf);
         OfferServiceImpl offerService = new OfferServiceImpl(emf);
-
+		
+        SendEmail sendEmail = new SendEmail(userService);
+        sendEmail.offer(1);
+        
         List<User> userList = userService.list();
         List<Item> itemList = itemService.list();
         List<Demand> demandList = demandService.list();
