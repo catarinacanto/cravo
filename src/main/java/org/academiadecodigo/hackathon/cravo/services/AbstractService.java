@@ -1,6 +1,7 @@
 package org.academiadecodigo.hackathon.cravo.services;
 
 import org.academiadecodigo.hackathon.cravo.model.AbstractModel;
+import org.academiadecodigo.hackathon.cravo.model.user.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -99,4 +100,5 @@ public abstract class AbstractService<T extends AbstractModel> implements CRUDSe
             }
         }
     }
+
 }
