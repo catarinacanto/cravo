@@ -12,7 +12,7 @@ import org.academiadecodigo.hackathon.cravo.services.UserRegisterServiceImpl;
 import org.academiadecodigo.hackathon.cravo.views.Navigation;
 import org.academiadecodigo.hackathon.cravo.views.ServiceRegistry;
 
-public class RegisterController {
+public class RegisterController implements Controller {
 
     private UserRegisterServiceImpl userRegisterService;
 

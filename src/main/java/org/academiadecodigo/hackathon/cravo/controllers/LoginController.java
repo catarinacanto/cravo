@@ -7,7 +7,7 @@ import org.academiadecodigo.hackathon.cravo.services.UserServiceImpl;
 import org.academiadecodigo.hackathon.cravo.views.Navigation;
 import org.academiadecodigo.hackathon.cravo.views.ServiceRegistry;
 
-public class LoginController {
+public class LoginController implements Controller {
 
     private UserServiceImpl userService;
 

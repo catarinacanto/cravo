@@ -10,7 +10,7 @@ import org.academiadecodigo.hackathon.cravo.services.OfferServiceImpl;
 import org.academiadecodigo.hackathon.cravo.views.Navigation;
 import org.academiadecodigo.hackathon.cravo.views.ServiceRegistry;
 
-public class HelpController {
+public class HelpController implements Controller {
 
     private OfferServiceImpl offerService;
 
