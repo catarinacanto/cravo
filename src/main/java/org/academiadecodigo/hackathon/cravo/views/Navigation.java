@@ -44,6 +44,7 @@ public class Navigation {
 
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(VIEW_PATH + view + ".fxml"));
             Parent root = fxmlLoader.load();
+
             controllerMap.put(view, fxmlLoader.<Controller>getController());
 
             Scene scene = new Scene(root, 1024, 768);

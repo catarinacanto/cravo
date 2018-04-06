@@ -83,11 +83,6 @@
                         <Font name="Helvetica Neue Light" size="12.0" />
                      </font>
                   </Text>
-                  <PasswordField fx:id="emailField" GridPane.columnIndex="2" GridPane.rowIndex="3">
-                     <font>
-                        <Font name="Helvetica Neue Light" size="12.0" />
-                     </font>
-                  </PasswordField>
                   <MenuButton fx:id="checkBoxText" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" style="-fx-pref-width: 1002;" text="Choose Type" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="4">
                      <items>
                         <MenuItem fx:id="single" mnemonicParsing="false" onAction="#chooseSingle" style="-fx-pref-width: 100;" text="Single" />
@@ -97,6 +92,7 @@
                         <Font name="Helvetica Neue Light" size="12.0" />
                      </font>
                   </MenuButton>
+                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="3" />
                </children>
             </GridPane>
             <Button layoutX="85.0" layoutY="468.0" mnemonicParsing="false" onAction="#onReturn" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #fff; -fx-border-color: #fff;" text="Return" textFill="#323232">

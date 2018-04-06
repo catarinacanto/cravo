@@ -25,7 +25,7 @@ public class Main extends Application {
 
         Navigation navigation = Navigation.getInstance();
         navigation.setStage(primaryStage);
-        navigation.load("mainMenu");
+        navigation.load("help");
 
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/mainMenu.fxml"));
