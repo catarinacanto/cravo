@@ -71,6 +71,11 @@
                         <Font name="Helvetica Neue Light" size="12.0" />
                      </font>
                   </PasswordField>
+                  <Text fx:id="errorMsg" fill="#ff1212" strokeType="OUTSIDE" strokeWidth="0.0" text="username or password not found" wrappingWidth="238.5029296875" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Helvetica Neue Light" size="10.0" />
+                     </font>
+                  </Text>
                </children>
             </GridPane>
             <Button layoutX="85.0" layoutY="468.0" mnemonicParsing="false" onAction="#onReturn" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #fff; -fx-border-color: #fff;" text="Return" textFill="#323232">
