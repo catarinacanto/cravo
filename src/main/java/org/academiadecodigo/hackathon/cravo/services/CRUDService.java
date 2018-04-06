@@ -4,7 +4,7 @@ import org.academiadecodigo.hackathon.cravo.model.AbstractModel;
 
 import java.util.List;
 
-public interface CRUDService<T extends AbstractModel> {
+public interface CRUDService<T extends AbstractModel> extends Service {
 
     List<T> list();
 

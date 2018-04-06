@@ -33,13 +33,13 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <TextField GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="userField" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="username" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="password" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="email" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="usertype" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <PasswordField GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <PasswordField fx:id="passField" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="emailField" GridPane.columnIndex="2" GridPane.rowIndex="3" />
             <MenuButton fx:id="checkBoxText" mnemonicParsing="false" prefHeight="27.0" prefWidth="150.0" style="-fx-pref-width: 1002;" text="Choose Type" textAlignment="CENTER" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="4">
               <items>
                 <MenuItem fx:id="single" mnemonicParsing="false" onAction="#chooseSingle" style="-fx-pref-width: 100;" text="Single" />
