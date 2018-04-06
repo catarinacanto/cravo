@@ -15,14 +15,14 @@ public class LoginController implements Controller {
 
     private UserServiceImpl userService;
 
+    @FXML
+    private Text errorMsg;
 
     public void initialize() {
         userService = (UserServiceImpl) ServiceRegistry.getInstance().getService("userService");
         errorMsg.setVisible(false);
     }
 
-    @FXML
-    private Text errorMsg;
 
 
     @FXML
