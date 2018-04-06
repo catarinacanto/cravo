@@ -76,9 +76,6 @@ public class RegisterController implements Controller {
 
             userRegisterService.registerUser(user);
 
-            List<User> userList = userRegisterService.list();
-            Integer registerId = null;
-
             mailer.register(emailField.getText(), userField.getText());
 
             text.setText("Register Successful!! Click here to Login");
