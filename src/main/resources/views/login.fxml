@@ -30,6 +30,7 @@
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="username" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="password" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <PasswordField fx:id="passField" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Text fx:id="errorMsg" fill="#bf1b1b" strokeType="OUTSIDE" strokeWidth="0.0" text="Incorrect username or password" GridPane.columnIndex="2" GridPane.rowIndex="3" />
          </children>
       </GridPane>
       <Button mnemonicParsing="false" onAction="#onSubmit" text="Submit" />

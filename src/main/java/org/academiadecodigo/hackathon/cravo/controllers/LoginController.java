@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import org.academiadecodigo.hackathon.cravo.services.UserServiceImpl;
 import org.academiadecodigo.hackathon.cravo.views.Navigation;
 import org.academiadecodigo.hackathon.cravo.services.ServiceRegistry;
@@ -14,10 +15,11 @@ public class LoginController implements Controller {
 
 
     public void initialize(){
-
         userService = (UserServiceImpl) ServiceRegistry.getInstance().getService("userService");
-
+        errorMsg.setVisible(false);
     }
+    @FXML
+    private Text errorMsg;
 
 
     @FXML
@@ -28,7 +30,13 @@ public class LoginController implements Controller {
 
     @FXML
     void onSubmit(ActionEvent event) {
-        Navigation.getInstance().load("help");
+
+        if(userService.authenticate(userField.getText(), passField.getText())){
+            Navigation.getInstance().load("help");
+
+        }
+
+        errorMsg.setVisible(true);
 
     }
 

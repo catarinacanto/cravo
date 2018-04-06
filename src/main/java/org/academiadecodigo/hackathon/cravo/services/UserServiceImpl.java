@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.criteria.CriteriaBuilder;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class UserServiceImpl extends AbstractService<User> {
@@ -23,7 +24,15 @@ public class UserServiceImpl extends AbstractService<User> {
 
         EntityManager em = emf.createEntityManager();
 
-        return password.equals(em.find(User.class, username).getPassword());
+        List<User> users = list();
+
+        for (User user : users) {
+            if (user.getUsername().equals(username) && user.getPassword().equals(password)){
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public void setLoginController(LoginController loginController) {
