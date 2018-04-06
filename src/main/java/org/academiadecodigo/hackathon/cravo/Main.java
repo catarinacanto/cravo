@@ -38,7 +38,6 @@ public class Main extends Application {
         navigation.setStage(primaryStage);
         navigation.load("mainMenu");
 
-
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/mainMenu.fxml"));
         Parent root = fxmlLoader.load();
 
@@ -68,6 +67,7 @@ public class Main extends Application {
 
             }
         }
+
     }
 
 }
