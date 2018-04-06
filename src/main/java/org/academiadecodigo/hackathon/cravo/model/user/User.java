@@ -27,6 +27,12 @@ public class User extends AbstractModel{
     private String country;
     private UserType type;
 
+    public User(String username, String password, String email) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+    }
+
     public User() {
     }
 

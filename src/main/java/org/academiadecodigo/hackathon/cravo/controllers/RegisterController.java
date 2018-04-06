@@ -8,14 +8,19 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+import org.academiadecodigo.hackathon.cravo.interwebs.SendEmail;
+import org.academiadecodigo.hackathon.cravo.model.user.User;
 import org.academiadecodigo.hackathon.cravo.services.UserRegisterServiceImpl;
+import org.academiadecodigo.hackathon.cravo.services.UserServiceImpl;
 import org.academiadecodigo.hackathon.cravo.views.Navigation;
 import org.academiadecodigo.hackathon.cravo.services.ServiceRegistry;
+
+import java.util.List;
 
 public class RegisterController implements Controller {
 
     private UserRegisterServiceImpl userRegisterService;
-
+    private SendEmail mailer;
 
     @FXML
     private TextField userField;
@@ -31,6 +36,11 @@ public class RegisterController implements Controller {
 
     @FXML
     private Text text;
+
+    @FXML
+    void initialize() {
+        mailer = new SendEmail((UserServiceImpl) ServiceRegistry.getInstance().getService("userServiceImpl"));
+    }
 
     @FXML
     void backToLogin(MouseEvent event) {
@@ -50,9 +60,9 @@ public class RegisterController implements Controller {
 
     @FXML
     void onSubmit(ActionEvent event) {
-       // System.out.println(userField.getText());
-       // System.out.println(passField.getText());
-       // System.out.println(emailField.getText());
+        // System.out.println(userField.getText());
+        // System.out.println(passField.getText());
+        // System.out.println(emailField.getText());
 
         String username = userField.getText();
 
@@ -60,11 +70,16 @@ public class RegisterController implements Controller {
         UserRegisterServiceImpl userRegisterService =
                 (UserRegisterServiceImpl) ServiceRegistry.getInstance().getService("userRegistryService");
 
-        System.out.println(userRegisterService.userExists(username));
+        if (!userRegisterService.userExists(username)) {
 
+            User user = new User(userField.getText(), passField.getText(), emailField.getText());
 
+            userRegisterService.registerUser(user);
 
-        text.setText("Register Successful!! Click here to Login");
+            mailer.register(emailField.getText(), userField.getText());
+
+            text.setText("Register Successful!! Click here to Login");
+        }
 
         Navigation.getInstance().load("login");
     }

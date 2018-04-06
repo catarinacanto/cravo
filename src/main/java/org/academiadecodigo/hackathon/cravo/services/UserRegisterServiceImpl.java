@@ -5,6 +5,12 @@ import org.academiadecodigo.hackathon.cravo.model.user.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.RollbackException;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+import java.sql.SQLException;
 import java.util.List;
 
 public class UserRegisterServiceImpl extends AbstractService<User> {
@@ -30,6 +36,29 @@ public class UserRegisterServiceImpl extends AbstractService<User> {
 
       return false;
 
+
+    }
+
+    public void registerUser(User user){
+
+        EntityManager em = emf.createEntityManager();
+
+        try {
+
+            em.getTransaction().begin();
+
+            em.merge(user);
+
+            em.getTransaction().commit();
+
+        } catch (RollbackException ex) {
+
+            em.getTransaction().rollback();
+        } finally {
+            if (em != null) {
+                em.close();
+            }
+        }
 
     }
 

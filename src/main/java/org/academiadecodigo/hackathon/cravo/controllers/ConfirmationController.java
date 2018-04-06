@@ -4,8 +4,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
+import org.academiadecodigo.hackathon.cravo.interwebs.SendEmail;
+import org.academiadecodigo.hackathon.cravo.services.CurrentUserService;
 import org.academiadecodigo.hackathon.cravo.services.ServiceRegistry;
 import org.academiadecodigo.hackathon.cravo.services.OrderService;
+import org.academiadecodigo.hackathon.cravo.services.UserServiceImpl;
 import org.academiadecodigo.hackathon.cravo.views.Navigation;
 
 import java.util.Map;
@@ -13,6 +16,9 @@ import java.util.Map;
 public class ConfirmationController implements Controller {
 
     private OrderService orderService;
+    private UserServiceImpl userService;
+    private CurrentUserService cU;
+    private SendEmail mailer;
 
     @FXML
     private Text confirmation;
@@ -28,6 +34,12 @@ public class ConfirmationController implements Controller {
 
     @FXML
     void initialize() {
+        userService = (UserServiceImpl) ServiceRegistry.getInstance().getService("userService");
+        cU = (CurrentUserService) ServiceRegistry.getInstance().getService("CurrentUserService");
+
+        mailer = new SendEmail(userService);
+
+
         orderService = (OrderService) ServiceRegistry.getInstance().getService(OrderService.class.getSimpleName());
         Map<String, Integer> orders = orderService.getOrders();
         StringBuilder sb = new StringBuilder();
@@ -40,7 +52,6 @@ public class ConfirmationController implements Controller {
         }
 
         received_text.setText(sb.toString());
-
         orderService.emptyMap();
 
     }
@@ -55,7 +66,8 @@ public class ConfirmationController implements Controller {
     void onConfirm(ActionEvent event) {
 
         //TODO interaction with the database (table=offers)
-        Navigation.getInstance().load("select");
+        mailer.offer(cU.getCurrentUser().getEmail(), cU.getCurrentUser().getUsername());
+        Navigation.getInstance().load("final");
     }
 
 }

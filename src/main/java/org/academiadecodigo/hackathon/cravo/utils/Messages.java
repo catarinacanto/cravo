@@ -10,8 +10,9 @@ public class Messages {
 	
 	
 	public static String mailOffer(String name) {
-		return "Thank you " + name + " for your offer! \n\n" +
-					   "Do Feel Free to Donate More!! All the Help is needed! \n\n" +
+		return "Thank you " + name + " for your generous offer! \n\n" +
+				"Every little bit helps, and you are bringing change to the world.\n\n" +
+					   "Do feel free to donate more!! All help is welcome and appreciated! \n\n" +
 					   "For more info about us click here!!";
 	}
 	

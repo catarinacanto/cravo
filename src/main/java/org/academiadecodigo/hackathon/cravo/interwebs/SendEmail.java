@@ -1,5 +1,7 @@
 package org.academiadecodigo.hackathon.cravo.interwebs;
 
+import org.academiadecodigo.hackathon.cravo.services.AbstractService;
+import org.academiadecodigo.hackathon.cravo.services.Service;
 import org.academiadecodigo.hackathon.cravo.services.UserServiceImpl;
 import org.academiadecodigo.hackathon.cravo.utils.Messages;
 
@@ -10,15 +12,15 @@ import java.util.Properties;
 
 public class SendEmail {
 	
-	private UserServiceImpl userService;
+	private AbstractService userService;
 	private Session session;
 	private MimeMessage message;
-	
-	public SendEmail(UserServiceImpl userService) {
+
+	public SendEmail(AbstractService userService) {
 		this.userService = userService;
 	}
 	
-	public void load() {
+	public void load(String email) {
 		
 		Properties props = new Properties();
 		props.put("mail.smtp.host", "smtp.gmail.com");
@@ -36,11 +38,11 @@ public class SendEmail {
 				});
 		
 		try {
-			
+            System.out.println(userService);
 			message = new MimeMessage(session);
 			message.setFrom(new InternetAddress("cravo.hackathon@gmail.com"));
 			message.setRecipients(Message.RecipientType.TO,
-					InternetAddress.parse(userService.get(1).getEmail()));
+					InternetAddress.parse(email));
 			message.setSubject("Testing Subject");
 			
 			System.out.println("Done");
@@ -50,10 +52,10 @@ public class SendEmail {
 		}
 	}
 	
-	public void register(Integer id) {
-		load();
+	public void register(String email, String name) {
+		load(email);
 		try {
-			message.setText(Messages.mailNeed(userService.get(id).getName()));
+			message.setText(Messages.mailRegister(name));
 			
 			Transport.send(message);
 		} catch (MessagingException e) {
@@ -61,26 +63,26 @@ public class SendEmail {
 		}
 	}
 	
-	public void offer(Integer id) {
-		load();
+	public void offer(String email, String name) {
+		load(email);
 		try {
-			message.setText(Messages.mailOffer(userService.get(id).getName()));
-			
+			message.setText(Messages.mailOffer(name));
+
 			Transport.send(message);
 		} catch (MessagingException e) {
 			e.printStackTrace();
 		}
 	}
-	
-	public void need(Integer id) {
-		load();
+
+	public void need(String email, String name) {
+		load(email);
 		try {
-			message.setText(Messages.mailOffer(userService.get(id).getName()));
-			
+			message.setText(Messages.mailOffer(name));
+
 			Transport.send(message);
 		} catch (MessagingException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 }
