@@ -5,6 +5,7 @@ import org.academiadecodigo.hackathon.cravo.model.user.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import java.util.List;
 
 public class UserRegisterServiceImpl extends AbstractService<User> {
 
@@ -18,13 +19,16 @@ public class UserRegisterServiceImpl extends AbstractService<User> {
 
         EntityManager em = emf.createEntityManager();
 
-        User user = em.find(User.class, username);
 
-        if(user != null) {
-            return false;
+        List<User> users = list();
+
+        for (User user : users) {
+            if (user.getUsername().equals(username)){
+                return true;
+            }
         }
 
-        return true;
+      return false;
 
 
     }

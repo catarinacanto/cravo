@@ -21,6 +21,8 @@ public class Bootstrap {
 
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("cravo");
 
+        ServiceRegistry serviceRegistry = new ServiceRegistry();
+
         OfferServiceImpl offerService = new OfferServiceImpl(emf);
 
         UserServiceImpl userService = new UserServiceImpl(emf);
