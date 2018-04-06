@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import org.academiadecodigo.hackathon.cravo.controllers.MainController;
 import org.academiadecodigo.hackathon.cravo.views.Navigation;
 
 import javax.persistence.EntityManager;
@@ -29,21 +30,6 @@ public class Main extends Application {
         Navigation navigation = Navigation.getInstance();
         navigation.setStage(primaryStage);
         navigation.load("mainMenu");
-
-
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/views/mainMenu.fxml"));
-        Parent root = fxmlLoader.load();
-
-        /*
-        GridPane gridPane = new GridPane();
-        gridPane.setAlignment(Pos.CENTER);
-
-        gridPane.setGridLinesVisible(false);
-
-        Scene mainScene = new Scene(root);
-
-        primaryStage.setScene(mainScene);
-        primaryStage.show();*/
 
     }
 }

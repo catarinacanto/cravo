@@ -1,32 +1,14 @@
 package org.academiadecodigo.hackathon.cravo.controllers;
 
-
-import org.academiadecodigo.hackathon.cravo.services.UserServiceImpl;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import org.academiadecodigo.hackathon.cravo.views.Navigation;
 
 public class LoginController {
 
-	private boolean onLogin;
-	private UserServiceImpl userService;
-
-	public void initialize(){
-	}
-
-	private void showLogin(){
-	}
-
-	private void showRegister(){
-	}
-
-	private void doLogin(){
-	}
-
-	private void doRegister(){
-	}
-
-	public void onButton(){
-	}
-
-	public void showLoginMessage(){
-	}
+    @FXML
+    void onSubmit(ActionEvent event) {
+        Navigation.getInstance().load("help");
+    }
 
 }
