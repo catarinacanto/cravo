@@ -3,12 +3,16 @@ package org.academiadecodigo.hackathon.cravo.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-import org.academiadecodigo.hackathon.cravo.services.ServiceRegistry;
 import org.academiadecodigo.hackathon.cravo.services.OrderService;
+import org.academiadecodigo.hackathon.cravo.services.ServiceRegistry;
 import org.academiadecodigo.hackathon.cravo.views.Navigation;
+
+import javax.persistence.criteria.CriteriaBuilder;
 
 public class SelectController implements Controller {
 
@@ -42,9 +46,9 @@ public class SelectController implements Controller {
 
     @FXML
     void onSubmit(ActionEvent event) {
-        if (!food.getText().equals("Food")){
+
+    	if (!food.getText().equals("Food")){
             orderService.putOrder("kg of " + food.getText(), Integer.parseInt(food_amt.getText()));
-	        System.out.println(food.getText());
         }
         if (!medicine.getText().equals("Medicine")){
             orderService.putOrder(medicine.getText(), Integer.parseInt(medicine_amt.getText()));
@@ -58,7 +62,13 @@ public class SelectController implements Controller {
             orderService.putOrder("€", Integer.parseInt(money_amt.getText()));
         }
 
+        if (food.getText().equals("Food")&& medicine.getText().equals("Medicine") &&
+		        time.getText().equals("Time") && money_amt.getText().equals("")){
+    		Navigation.getInstance().load("select");
+        } else {
+
         Navigation.getInstance().load("confirmation");
+        }
 
     }
 
