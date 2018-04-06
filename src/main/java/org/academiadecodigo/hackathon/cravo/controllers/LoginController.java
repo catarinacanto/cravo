@@ -37,4 +37,7 @@ public class LoginController implements Controller {
     }
 
 
+    public void onReturn(ActionEvent actionEvent) {
+        Navigation.getInstance().load("mainMenu");
+    }
 }

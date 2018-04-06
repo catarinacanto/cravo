@@ -85,6 +85,10 @@ public class RegisterController implements Controller {
     public TextField getEmalField() {
         return emailField;
     }
+
+    public void onReturn(ActionEvent actionEvent) {
+        Navigation.getInstance().load("mainMenu");
+    }
 }
 
 
