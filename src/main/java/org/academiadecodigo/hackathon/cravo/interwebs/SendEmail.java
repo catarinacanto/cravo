@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class SendEmail {
 	
-	public static void main(String[] args) {
+	public void main() {
 		
 		Properties props = new Properties();
 		props.put("mail.smtp.host", "smtp.gmail.com");
@@ -20,7 +20,7 @@ public class SendEmail {
 		Session session = Session.getDefaultInstance(props,
 				new javax.mail.Authenticator() {
 					protected PasswordAuthentication getPasswordAuthentication() {
-						return new PasswordAuthentication("cravo.hackathon@gmail.com","cravo1234");
+						return new PasswordAuthentication("cravo.hackathon@gmail.com", "cravo1234");
 					}
 				});
 		
