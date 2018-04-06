@@ -17,6 +17,7 @@ public class HelpController implements Controller {
 
     @FXML
     void need(ActionEvent event) {
+
         Navigation.getInstance().load("select");
     }
 

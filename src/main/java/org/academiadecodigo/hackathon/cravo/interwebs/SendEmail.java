@@ -55,7 +55,7 @@ public class SendEmail {
 	public void register(String email, String name) {
 		load(email);
 		try {
-			message.setText(Messages.mailNeed(name));
+			message.setText(Messages.mailRegister(name));
 			
 			Transport.send(message);
 		} catch (MessagingException e) {

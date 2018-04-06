@@ -8,7 +8,7 @@ public class MainController implements Controller {
     private LoginController loginController;
 
     @FXML
-    void onLoginKey(ActionEvent event) {
+    void onLogin(ActionEvent event) {
         Navigation.getInstance().load("login");
     }
 

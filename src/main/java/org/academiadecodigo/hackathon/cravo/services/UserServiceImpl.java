@@ -20,7 +20,7 @@ public class UserServiceImpl extends AbstractService<User> {
     }
 
 
-    public boolean authenticate(String username, String password) {
+    public User authenticate(String username, String password) {
 
         EntityManager em = emf.createEntityManager();
 
@@ -28,11 +28,11 @@ public class UserServiceImpl extends AbstractService<User> {
 
         for (User user : users) {
             if (user.getUsername().equals(username) && user.getPassword().equals(password)){
-                return true;
+                return user;
             }
         }
 
-        return false;
+        return null;
     }
 
     public void setLoginController(LoginController loginController) {
