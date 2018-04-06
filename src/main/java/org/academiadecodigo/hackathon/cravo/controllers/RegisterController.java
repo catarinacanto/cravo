@@ -8,7 +8,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import org.academiadecodigo.hackathon.cravo.views.Navigation;
 
-public class RegisterController {
+public class RegisterController implements Controller {
 
     @FXML
     private MenuButton checkBoxText;

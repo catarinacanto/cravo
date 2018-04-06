@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 import org.academiadecodigo.hackathon.cravo.views.Navigation;
 
-public class HelpController {
+public class HelpController implements Controller {
 
     @FXML
     private Text offerText;

@@ -8,10 +8,7 @@ import org.academiadecodigo.hackathon.cravo.model.item.Item;
 import org.academiadecodigo.hackathon.cravo.model.transactions.Demand;
 import org.academiadecodigo.hackathon.cravo.model.transactions.Offer;
 import org.academiadecodigo.hackathon.cravo.model.user.User;
-import org.academiadecodigo.hackathon.cravo.services.DemandServiceImpl;
-import org.academiadecodigo.hackathon.cravo.services.ItemServiceImpl;
-import org.academiadecodigo.hackathon.cravo.services.OfferServiceImpl;
-import org.academiadecodigo.hackathon.cravo.services.UserServiceImpl;
+import org.academiadecodigo.hackathon.cravo.services.*;
 import org.academiadecodigo.hackathon.cravo.views.Navigation;
 
 import javax.persistence.EntityManager;
@@ -33,6 +30,8 @@ public class Main extends Application {
 
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("cravo");
         EntityManager em = emf.createEntityManager();
+
+        ServiceRegistry.getInstance().addService(OrderService.class.getSimpleName(), new OrderService());
 
         Navigation navigation = Navigation.getInstance();
         navigation.setStage(primaryStage);

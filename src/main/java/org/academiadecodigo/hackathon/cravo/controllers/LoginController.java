@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import org.academiadecodigo.hackathon.cravo.views.Navigation;
 
-public class LoginController {
+public class LoginController implements Controller {
 
     @FXML
     void onSubmit(ActionEvent event) {
