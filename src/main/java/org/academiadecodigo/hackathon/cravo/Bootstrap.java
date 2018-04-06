@@ -17,12 +17,14 @@ public class Bootstrap {
         UserServiceImpl userService = new UserServiceImpl(emf);
 
         UserRegisterServiceImpl userRegisterService = new UserRegisterServiceImpl(emf);
-    
         ItemServiceImpl itemService = new ItemServiceImpl(emf);
-
+        OfferDataBaseService offerDataBaseService = new OfferDataBaseService(emf);
+    
         ServiceRegistry.getInstance().addService("offerService",offerService);
         ServiceRegistry.getInstance().addService("userService",userService);
+        ServiceRegistry.getInstance().addService("itemService", itemService);
         ServiceRegistry.getInstance().addService("userRegistryService",userRegisterService);
+        ServiceRegistry.getInstance().addService("offerDataBaseService",offerDataBaseService);
         
         ServiceRegistry.getInstance().addService("ItemServiceImpl", itemService);
 

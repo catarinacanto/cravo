@@ -11,7 +11,7 @@ INSERT INTO item(ID, NAME, description) VALUES
   (1, 'Batata', 'As batatas mais bouas do norte'),
   (2, 'Benuron', 'Supositorios'),
   (3, 'Agua', 'Agua potavel'),
-  (4, 'Dolars', 'Dinheiro'),
+  (4, 'Dollars', 'Dinheiro'),
   (5, 'Carne', 'A melhor carne de vaca de Ermesinde');
 
 DELETE FROM offer;
