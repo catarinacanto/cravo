@@ -8,8 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-import org.academiadecodigo.hackathon.cravo.ServiceRegistry;
 import org.academiadecodigo.hackathon.cravo.services.OrderService;
+import org.academiadecodigo.hackathon.cravo.services.ServiceRegistry;
 import org.academiadecodigo.hackathon.cravo.views.Navigation;
 
 import javax.persistence.criteria.CriteriaBuilder;
@@ -41,7 +41,7 @@ public class SelectController implements Controller {
 
     @FXML
     void initialize() {
-        orderService = (OrderService) ServiceRegistry.getInstance().get(OrderService.class.getSimpleName());
+        orderService = (OrderService) ServiceRegistry.getInstance().getService(OrderService.class.getSimpleName());
     }
 
     @FXML
