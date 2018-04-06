@@ -19,10 +19,10 @@ public class Demand extends AbstractModel{
     private Integer id;
 
     @ManyToOne
-    private User user_id;
+    private User user;
 
     @ManyToOne
-    private Item item_id;
+    private Item item;
 
     private Integer amount;
 
@@ -37,20 +37,20 @@ public class Demand extends AbstractModel{
         this.id = id;
     }
 
-    public User getUser_id() {
-        return user_id;
+    public User getUser() {
+        return user;
     }
 
-    public void setUser_id(User user_id) {
-        this.user_id = user_id;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public Item getItem_id() {
-        return item_id;
+    public Item getItem() {
+        return item;
     }
 
-    public void setItem_id(Item item_id) {
-        this.item_id = item_id;
+    public void setItem(Item item) {
+        this.item = item;
     }
 
     public Integer getAmount() {
@@ -67,5 +67,16 @@ public class Demand extends AbstractModel{
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    @Override
+    public String toString() {
+        return "Demand{" +
+                "id=" + id +
+                ", user=" + user +
+                ", item=" + item +
+                ", amount=" + amount +
+                ", date=" + date +
+                '}';
     }
 }

@@ -25,29 +25,17 @@ public class Item extends AbstractModel {
     }
 
     @OneToMany(
-            // propagate changes on customer entity to account entities
             cascade = {CascadeType.ALL},
-
-            // user customer foreign key on account table to establish
-            // the many-to-one relationship instead of a join table
-            mappedBy = "item_id",
-
-            // fetch accounts from database together with user
-            fetch = FetchType.LAZY
+            mappedBy = "item",
+            fetch = FetchType.EAGER
     )
     @Fetch(value = FetchMode.SUBSELECT)
     private List<Offer> offers = new ArrayList<>();
 
     @OneToMany(
-            // propagate changes on customer entity to account entities
             cascade = {CascadeType.ALL},
-
-            // user customer foreign key on account table to establish
-            // the many-to-one relationship instead of a join table
-            mappedBy = "item_id",
-
-            // fetch accounts from database together with user
-            fetch = FetchType.LAZY
+            mappedBy = "item",
+            fetch = FetchType.EAGER
     )
     @Fetch(value = FetchMode.SUBSELECT)
     private List<Demand> demands = new ArrayList<>();
@@ -98,5 +86,14 @@ public class Item extends AbstractModel {
 
     public void setItemType(ItemType itemType) {
         this.itemType = itemType;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }

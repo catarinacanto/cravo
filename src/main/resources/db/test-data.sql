@@ -15,7 +15,7 @@ INSERT INTO item(ID, NAME, description) VALUES
   (5, 'Carne', 'A melhor carne de vaca de Ermesinde');
 
 DELETE FROM offer;
-INSERT INTO offer(ID, user_id_id, item_id_id, amount, date) VALUES
+INSERT INTO offer(ID, user_id, item_id, amount, date) VALUES
   (1, 1, 1, 100, '2018_04_02'),
   (2, 2, 2, 15, '2018_04_01'),
   (3, 2, 3, 30, '2018_03_29'),
@@ -23,7 +23,7 @@ INSERT INTO offer(ID, user_id_id, item_id_id, amount, date) VALUES
   (5, 3, 2, 10, '2018_04_04');
 
 DELETE FROM demand;
-INSERT INTO demand(ID, user_id_id, item_id_id, amount, date) VALUES
+INSERT INTO demand(ID, user_id, item_id, amount, date) VALUES
   (1, 4, 1, 80, '2018_04_02'),
   (2, 4, 2, 10, '2018_04_01'),
   (3, 5, 3, 15, '2018_03_29'),

@@ -2,7 +2,6 @@ package org.academiadecodigo.hackathon.cravo.model.user;
 
 
 import org.academiadecodigo.hackathon.cravo.model.AbstractModel;
-import org.academiadecodigo.hackathon.cravo.model.item.Item;
 import org.academiadecodigo.hackathon.cravo.model.transactions.Demand;
 import org.academiadecodigo.hackathon.cravo.model.transactions.Offer;
 import org.hibernate.annotations.Fetch;
@@ -32,15 +31,8 @@ public class User extends AbstractModel{
     }
 
     @OneToMany(
-            // propagate changes on customer entity to account entities
             cascade = {CascadeType.ALL},
-
-
-            // user customer foreign key on account table to establish
-            // the many-to-one relationship instead of a join table
-            mappedBy = "user_id",
-
-            // fetch accounts from database together with user
+            mappedBy = "user",
             fetch = FetchType.EAGER
     )
 
@@ -48,14 +40,8 @@ public class User extends AbstractModel{
     private List<Offer> offers = new ArrayList<>();
 
     @OneToMany(
-            // propagate changes on customer entity to account entities
             cascade = {CascadeType.ALL},
-
-            // user customer foreign key on account table to establish
-            // the many-to-one relationship instead of a join table
-            mappedBy = "user_id",
-
-            // fetch accounts from database together with user
+            mappedBy = "user",
             fetch = FetchType.EAGER
     )
     @Fetch(value = FetchMode.SUBSELECT)
