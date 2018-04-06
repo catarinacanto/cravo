@@ -10,7 +10,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import org.academiadecodigo.hackathon.cravo.services.UserRegisterServiceImpl;
 import org.academiadecodigo.hackathon.cravo.views.Navigation;
-import org.academiadecodigo.hackathon.cravo.views.ServiceRegistry;
+import org.academiadecodigo.hackathon.cravo.services.ServiceRegistry;
 
 public class RegisterController implements Controller {
 
@@ -57,11 +57,11 @@ public class RegisterController implements Controller {
         String username = userField.getText();
 
         System.out.println(this);
-        UserRegisterServiceImpl userRegisterService = (UserRegisterServiceImpl) ServiceRegistry.getService("userRegistryService");
+        UserRegisterServiceImpl userRegisterService =
+                (UserRegisterServiceImpl) ServiceRegistry.getInstance().getService("userRegistryService");
 
         System.out.println(userRegisterService.userExists(username));
 
-        //userRegisterService.save();
 
 
         text.setText("Register Successful!! Click here to Login");

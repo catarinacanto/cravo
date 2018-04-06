@@ -4,11 +4,9 @@ package org.academiadecodigo.hackathon.cravo.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
-import org.academiadecodigo.hackathon.cravo.model.transactions.Offer;
-import org.academiadecodigo.hackathon.cravo.services.AbstractService;
 import org.academiadecodigo.hackathon.cravo.services.OfferServiceImpl;
 import org.academiadecodigo.hackathon.cravo.views.Navigation;
-import org.academiadecodigo.hackathon.cravo.views.ServiceRegistry;
+import org.academiadecodigo.hackathon.cravo.services.ServiceRegistry;
 
 public class HelpController implements Controller {
 
@@ -29,7 +27,7 @@ public class HelpController implements Controller {
 
     public void initialize(){
 
-        offerService = (OfferServiceImpl) ServiceRegistry.getService("offerService");
+        offerService = (OfferServiceImpl) ServiceRegistry.getInstance().getService("offerService");
     }
 
 

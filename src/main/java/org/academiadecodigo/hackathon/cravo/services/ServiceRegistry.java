@@ -1,6 +1,4 @@
-package org.academiadecodigo.hackathon.cravo;
-
-import org.academiadecodigo.hackathon.cravo.services.Service;
+package org.academiadecodigo.hackathon.cravo.services;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,7 +25,7 @@ public class ServiceRegistry {
         services.put(name, service);
     }
 
-    public Service get(String name) {
+    public Service getService(String name) {
         return services.get(name);
     }
 }
