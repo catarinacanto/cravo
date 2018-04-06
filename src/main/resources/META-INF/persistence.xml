@@ -17,16 +17,16 @@
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
             <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/cravo"/>
-            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.connection.username" value="testuser"/>
             <property name="hibernate.connection.password" value=""/>
             <property name="hibernate.archive.autodetection" value="class"/>
             <property name="hibernate.format_sql" value="true"/>
 
-            <!-- Create database schema and populate with test data -->
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
-            <property name="hibernate.hbm2ddl.import_files" value="db/test-data.sql" />
-            <property name="hibernate.hbm2ddl.import_files_sql_extractor" value="org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor" />
-            <property name="hibernate.show_sql" value="true"/>
+            <!--&lt;!&ndash; Create database schema and populate with test data &ndash;&gt;-->
+            <!--<property name="hibernate.hbm2ddl.auto" value="create"/>-->
+            <!--<property name="hibernate.hbm2ddl.import_files" value="db/test-data.sql" />-->
+            <!--<property name="hibernate.hbm2ddl.import_files_sql_extractor" value="org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor" />-->
+            <!--<property name="hibernate.show_sql" value="true"/>-->
 
         </properties>
     </persistence-unit>
