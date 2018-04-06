@@ -9,39 +9,47 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackathon.cravo.controllers.SelectController">
-   <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
-         <children>
-            <Text layoutX="229.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select an option:">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Text>
-            <SplitMenuButton fx:id="food" layoutX="206.0" layoutY="83.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="101.0" text="Food">
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/9.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackathon.cravo.controllers.SelectController">
+    <children>
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+            <children>
+                <Text layoutX="229.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select an option:">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Text>
+                <SplitMenuButton fx:id="medicine" layoutX="206.0" layoutY="132.0" mnemonicParsing="false" text="Medicine">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#setMedicine" text="Ben-u-ron" />
+                    </items>
+                </SplitMenuButton>
+                <TextField fx:id="food_amt" layoutX="316.0" layoutY="83.0" prefHeight="27.0" prefWidth="28.0" />
+                <TextField fx:id="medicine_amt" layoutX="316.0" layoutY="132.0" prefHeight="27.0" prefWidth="28.0" />
+                <Text layoutX="353.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amnt." />
+                <Text layoutX="353.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amnt." />
+                <Button layoutX="180.0" layoutY="285.0" mnemonicParsing="false" onAction="#onSubmit" prefHeight="86.0" prefWidth="241.0" text="SUBMIT">
+                    <font>
+                        <Font size="45.0" />
+                    </font>
+                </Button>
+                <TextField fx:id="money_amt" layoutX="316.0" layoutY="227.0" prefHeight="27.0" prefWidth="28.0" />
+                <Text layoutX="353.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amnt." />
+                <Text fx:id="money" layoutX="236.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Money" />
+                <SplitMenuButton fx:id="time" layoutX="206.0" layoutY="180.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" text="Time">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#setTeaching" text="Teaching" />
+                        <MenuItem mnemonicParsing="false" onAction="#setConstruction" text="Construction" />
+                    </items>
+                </SplitMenuButton>
+                <TextField fx:id="time_amt" layoutX="316.0" layoutY="180.0" prefHeight="21.0" prefWidth="28.0" />
+                <Text layoutX="353.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amnt." />
+            <SplitMenuButton fx:id="food" layoutX="206.0" layoutY="83.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" text="Food">
               <items>
-                <MenuItem mnemonicParsing="false" onAction="#setFood" text="Batata" />
+                <MenuItem fx:id="potatoes" mnemonicParsing="false" onAction="#setPotatoes" text="Potatoes" />
+                <MenuItem fx:id="rice" mnemonicParsing="false" onAction="#setRice" text="Rice" />
               </items>
             </SplitMenuButton>
-            <SplitMenuButton fx:id="medicine" layoutX="206.0" layoutY="132.0" mnemonicParsing="false" text="Medicine">
-              <items>
-                <MenuItem mnemonicParsing="false" onAction="#setMedicine" text="Ben-u-ron" />
-              </items>
-            </SplitMenuButton>
-            <TextField fx:id="food_amt" layoutX="316.0" layoutY="83.0" prefHeight="27.0" prefWidth="28.0" />
-            <TextField fx:id="medicine_amt" layoutX="316.0" layoutY="132.0" prefHeight="27.0" prefWidth="28.0" />
-            <Text layoutX="353.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amnt." />
-            <Text layoutX="353.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amnt." />
-            <Button layoutX="180.0" layoutY="249.0" mnemonicParsing="false" onAction="#onSubmit" prefHeight="86.0" prefWidth="241.0" text="SUBMIT">
-               <font>
-                  <Font size="45.0" />
-               </font>
-            </Button>
-            <TextField fx:id="money_amt" layoutX="316.0" layoutY="180.0" prefHeight="27.0" prefWidth="28.0" />
-            <Text layoutX="353.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amnt." />
-            <Text fx:id="money" layoutX="236.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Money" />
-         </children>
-      </AnchorPane>
-   </children>
+            </children>
+        </AnchorPane>
+    </children>
 </VBox>

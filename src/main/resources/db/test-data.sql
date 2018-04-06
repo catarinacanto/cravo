@@ -29,3 +29,4 @@ INSERT INTO demand(ID, user_id, item_id, amount, date) VALUES
   (3, 5, 3, 15, '2018_03_29'),
   (4, 5, 4, 20, '2018_04_01'),
   (5, 5, 2, 30, '2018_04_04');
+

@@ -33,6 +33,12 @@ public class SelectController implements Controller {
     private TextField money_amt;
 
     @FXML
+    private SplitMenuButton time;
+
+    @FXML
+    private TextField time_amt;
+
+    @FXML
     void initialize() {
         orderService = (OrderService) ServiceRegistry.getInstance().get(OrderService.class.getSimpleName());
     }
@@ -40,14 +46,19 @@ public class SelectController implements Controller {
     @FXML
     void onSubmit(ActionEvent event) {
         if (!food.getText().equals("Food")){
-            orderService.putOrder(food.getText(), Integer.parseInt(food_amt.getText()));
+            orderService.putOrder("kg of " + food.getText(), Integer.parseInt(food_amt.getText()));
+	        System.out.println(food.getText());
         }
         if (!medicine.getText().equals("Medicine")){
             orderService.putOrder(medicine.getText(), Integer.parseInt(medicine_amt.getText()));
         }
 
+        if (!time.getText().equals("Time")){
+            orderService.putOrder(time.getText() + " hours", Integer.parseInt(time_amt.getText()));
+        }
+
         if (!money_amt.getText().equals("")) {
-            orderService.putOrder("money", Integer.parseInt(money_amt.getText()));
+            orderService.putOrder("€", Integer.parseInt(money_amt.getText()));
         }
 
         Navigation.getInstance().load("confirmation");
@@ -58,8 +69,13 @@ public class SelectController implements Controller {
     private Text money;
 
     @FXML
-    void setFood(ActionEvent event) {
-        food.setText("batata");
+    void setPotatoes(ActionEvent event) {
+        food.setText("potatoes");
+    }
+
+    @FXML
+    void setRice(ActionEvent event) {
+    	food.setText("rice");
     }
 
     @FXML
@@ -70,12 +86,23 @@ public class SelectController implements Controller {
     @FXML
     void setMenuItem(ActionEvent event) {
         money.setText("100");
-
     }
 
+	@FXML
+	void setConstruction(ActionEvent event) {
+		time.setText("Construction ");
+	}
+
+	@FXML
+	void setTeaching(ActionEvent event) {
+		time.setText("Teaching ");
+	}
 
     public void setOrderService(OrderService orderService) {
         this.orderService = orderService;
     }
+
+	public void setTime(ActionEvent actionEvent) {
+	}
 }
 
