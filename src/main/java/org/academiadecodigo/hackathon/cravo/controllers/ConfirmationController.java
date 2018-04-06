@@ -55,7 +55,7 @@ public class ConfirmationController implements Controller {
     void onConfirm(ActionEvent event) {
 
         //TODO interaction with the database (table=offers)
-        Navigation.getInstance().load("select");
+        Navigation.getInstance().load("final");
     }
 
 }

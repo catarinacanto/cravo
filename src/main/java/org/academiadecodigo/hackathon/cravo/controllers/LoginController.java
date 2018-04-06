@@ -30,10 +30,8 @@ public class LoginController implements Controller {
 
     @FXML
     void onSubmit(ActionEvent event) {
-
         if(userService.authenticate(userField.getText(), passField.getText())){
             Navigation.getInstance().load("help");
-
         }
 
         errorMsg.setVisible(true);
