@@ -2,11 +2,9 @@ package org.academiadecodigo.hackathon.cravo.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
-import org.academiadecodigo.hackathon.cravo.ServiceRegistry;
+import org.academiadecodigo.hackathon.cravo.services.ServiceRegistry;
 import org.academiadecodigo.hackathon.cravo.services.OrderService;
 import org.academiadecodigo.hackathon.cravo.views.Navigation;
 
@@ -30,13 +28,11 @@ public class ConfirmationController implements Controller {
 
     @FXML
     void initialize() {
-
-
-        orderService = (OrderService) ServiceRegistry.getInstance().get(OrderService.class.getSimpleName());
+        orderService = (OrderService) ServiceRegistry.getInstance().getService(OrderService.class.getSimpleName());
         Map<String, Integer> orders = orderService.getOrders();
         StringBuilder sb = new StringBuilder();
         for (String s : orders.keySet()) {
-            sb.append("Please confirm your selection of ");
+            sb.append("Confirm you want to donate ");
             sb.append(orders.get(s));
             sb.append(" ");
             sb.append(s);
@@ -59,7 +55,7 @@ public class ConfirmationController implements Controller {
     void onConfirm(ActionEvent event) {
 
         //TODO interaction with the database (table=offers)
-        Navigation.getInstance().load("final");
+        Navigation.getInstance().load("select");
     }
 
 }
