@@ -9,6 +9,8 @@ import org.academiadecodigo.hackathon.cravo.ServiceRegistry;
 import org.academiadecodigo.hackathon.cravo.services.OrderService;
 import org.academiadecodigo.hackathon.cravo.views.Navigation;
 
+import java.util.Map;
+
 public class ConfirmationController implements Controller {
 
     private OrderService orderService;
@@ -28,7 +30,20 @@ public class ConfirmationController implements Controller {
     @FXML
     void initialize() {
         orderService = (OrderService) ServiceRegistry.getInstance().get(OrderService.class.getSimpleName());
-        received_text.setText(orderService.getOrders().get("batata").toString());
+        Map<String, Integer> orders = orderService.getOrders();
+        StringBuilder sb = new StringBuilder();
+        for (String s : orders.keySet()) {
+            sb.append("Confirm you want to donate ");
+            sb.append(orders.get(s));
+            sb.append(" ");
+            sb.append(s);
+            sb.append("?\n");
+        }
+
+        received_text.setText(sb.toString());
+
+        orderService.emptyMap();
+
     }
 
     @FXML

@@ -11,6 +11,8 @@ import org.academiadecodigo.hackathon.cravo.ServiceRegistry;
 import org.academiadecodigo.hackathon.cravo.services.OrderService;
 import org.academiadecodigo.hackathon.cravo.views.Navigation;
 
+import javax.persistence.criteria.CriteriaBuilder;
+
 public class SelectController implements Controller {
 
     private OrderService orderService;
@@ -22,13 +24,32 @@ public class SelectController implements Controller {
     private SplitMenuButton medicine;
 
     @FXML
+    private TextField food_amt;
+
+    @FXML
+    private TextField medicine_amt;
+
+    @FXML
+    private TextField money_amt;
+
+    @FXML
     void initialize() {
         orderService = (OrderService) ServiceRegistry.getInstance().get(OrderService.class.getSimpleName());
     }
 
     @FXML
     void onSubmit(ActionEvent event) {
-        orderService.putOrder("batata");
+        if (!food.getText().equals("Food")){
+            orderService.putOrder(food.getText(), Integer.parseInt(food_amt.getText()));
+        }
+        if (!medicine.getText().equals("Medicine")){
+            orderService.putOrder(medicine.getText(), Integer.parseInt(medicine_amt.getText()));
+        }
+
+        if (!money_amt.getText().equals("")) {
+            orderService.putOrder("money", Integer.parseInt(money_amt.getText()));
+        }
+
         Navigation.getInstance().load("confirmation");
 
     }
@@ -52,14 +73,6 @@ public class SelectController implements Controller {
 
     }
 
-    @FXML
-    private TextField food_amt;
-
-    @FXML
-    private TextField medicine_amt;
-
-    @FXML
-    private TextField money_amt;
 
     public void setOrderService(OrderService orderService) {
         this.orderService = orderService;
