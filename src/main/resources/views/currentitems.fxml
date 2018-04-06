@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
@@ -51,6 +52,26 @@
                   <Font size="20.0" />
                </font>
             </Text>
+            <Text fx:id="amount1" strokeType="OUTSIDE" strokeWidth="0.0" text="amount 1" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="amount2" strokeType="OUTSIDE" strokeWidth="0.0" text="amount 2" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="amount3" strokeType="OUTSIDE" strokeWidth="0.0" text="amount 3" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="amount4" strokeType="OUTSIDE" strokeWidth="0.0" text="amount 4" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
          </children>
       </GridPane>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Current items" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
@@ -58,5 +79,6 @@
             <Font size="34.0" />
          </font>
       </Text>
+      <Button fx:id="backButton" mnemonicParsing="false" onAction="#back" text="Back" />
    </children>
 </GridPane>

@@ -37,8 +37,10 @@ public class LoginController implements Controller {
 
         if ((logInUser = userService.authenticate(userField.getText(), passField.getText())) != null) {
 
-            ServiceRegistry.getInstance().addService(CurrentUserService.class.getSimpleName(), new CurrentUserService());
-
+            ServiceRegistry.getInstance().addService(
+                    CurrentUserService.class.getSimpleName(),
+                    new CurrentUserService(logInUser));
+            System.out.println(CurrentUserService.class.getSimpleName());
             Navigation.getInstance().load("help");
 
         }
