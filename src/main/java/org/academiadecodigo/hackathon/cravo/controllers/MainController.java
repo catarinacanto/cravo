@@ -3,7 +3,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import org.academiadecodigo.hackathon.cravo.views.Navigation;
 
-public class MainController {
+public class MainController implements Controller {
 
     private LoginController loginController;
 
