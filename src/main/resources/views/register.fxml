@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackathon.cravo.controllers.RegisterController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.academiadecodigo.hackathon.cravo.controllers.RegisterController">
    <children>
       <ImageView fitHeight="792.0" fitWidth="1050.0" layoutX="-13.0" layoutY="-11.0" pickOnBounds="true">
          <image>
@@ -92,7 +92,7 @@
                         <Font name="Helvetica Neue Light" size="12.0" />
                      </font>
                   </MenuButton>
-                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <TextField fx:id="emailField" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                </children>
             </GridPane>
             <Button layoutX="85.0" layoutY="468.0" mnemonicParsing="false" onAction="#onReturn" prefHeight="27.0" prefWidth="123.0" style="-fx-background-color: #fff; -fx-border-color: #fff;" text="Return" textFill="#323232">

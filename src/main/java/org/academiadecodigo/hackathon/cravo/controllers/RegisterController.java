@@ -58,11 +58,49 @@ public class RegisterController implements Controller {
     }
 
 
+    public UserRegisterServiceImpl getUserRegisterService() {
+        return userRegisterService;
+    }
+
+    public SendEmail getMailer() {
+        return mailer;
+    }
+
+    public void setMailer(SendEmail mailer) {
+        this.mailer = mailer;
+    }
+
+    public void setUserField(TextField userField) {
+        this.userField = userField;
+    }
+
+    public void setPassField(PasswordField passField) {
+        this.passField = passField;
+    }
+
+    public TextField getEmailField() {
+        return emailField;
+    }
+
+    public MenuButton getCheckBoxText() {
+        return checkBoxText;
+    }
+
+    public void setCheckBoxText(MenuButton checkBoxText) {
+        this.checkBoxText = checkBoxText;
+    }
+
+    public Text getText() {
+        return text;
+    }
+
+    public void setText(Text text) {
+        this.text = text;
+    }
+
     @FXML
     void onSubmit(ActionEvent event) {
-        // System.out.println(userField.getText());
-        // System.out.println(passField.getText());
-        // System.out.println(emailField.getText());
+
 
         String username = userField.getText();
 
@@ -71,14 +109,13 @@ public class RegisterController implements Controller {
                 (UserRegisterServiceImpl) ServiceRegistry.getInstance().getService("userRegistryService");
 
         if (!userRegisterService.userExists(username)) {
-
+            System.out.println(emailField);
             User user = new User(userField.getText(), passField.getText(), emailField.getText());
-
+            System.out.println(user);
             userRegisterService.registerUser(user);
 
             mailer.register(emailField.getText(), userField.getText());
 
-            text.setText("Register Successful!! Click here to Login");
         }
 
         Navigation.getInstance().load("login");
@@ -103,6 +140,10 @@ public class RegisterController implements Controller {
 
     public void onReturn(ActionEvent actionEvent) {
         Navigation.getInstance().load("mainMenu");
+    }
+
+    public void setEmailField(TextField emailField) {
+        this.emailField = emailField;
     }
 }
 
